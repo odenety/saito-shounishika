@@ -1,0 +1,29 @@
+// ==========================================================================
+// Services Project
+// ==========================================================================
+
+.p-services {
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-xl;
+
+    @media (min-width: $breakpoint-sm) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: $breakpoint-md) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: $spacing-lg;
+    }
+
+    @media (min-width: $breakpoint-xl) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: $spacing-xl;
+    }
+  }
+}

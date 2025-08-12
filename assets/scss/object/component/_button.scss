@@ -1,0 +1,55 @@
+// ==========================================================================
+// Button Component
+// ==========================================================================
+
+.c-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-md $spacing-xl;
+  border-radius: $border-radius-xl;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &--primary {
+    background-color: $primary-orange;
+    color: $white;
+    box-shadow: $shadow-light;
+
+    &:hover {
+      background-color: darken($primary-orange, 10%);
+      transform: translateY(-2px);
+      box-shadow: $shadow-medium;
+    }
+  }
+
+  &--secondary {
+    background-color: $primary-blue;
+    color: $white;
+    box-shadow: $shadow-light;
+
+    &:hover {
+      background-color: darken($primary-blue, 10%);
+      transform: translateY(-2px);
+      box-shadow: $shadow-medium;
+    }
+  }
+
+  &--outline {
+    background-color: transparent;
+    color: $primary-orange;
+    border: 2px solid $primary-orange;
+
+    &:hover {
+      background-color: $primary-orange;
+      color: $white;
+    }
+  }
+
+  &--large {
+    padding: $spacing-lg $spacing-2xl;
+    font-size: $font-size-lg;
+  }
+}

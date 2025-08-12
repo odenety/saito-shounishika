@@ -1,0 +1,20 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "HOST=0.0.0.0 nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "build:static": "nuxt generate",
+    "deploy:s3": "npm run build:static && aws s3 sync .output/public s3://your-bucket-name --delete",
+    "deploy:s3:recruit": "npm run build:static && aws s3 sync .output/public s3://your-bucket-name --delete --cache-control 'max-age=31536000'"
+  },
+  "dependencies": {
+    "@nuxtjs/google-fonts": "^3.2.0",
+    "nuxt": "^3.13.0",
+    "sass": "^1.89.2"
+  }
+}

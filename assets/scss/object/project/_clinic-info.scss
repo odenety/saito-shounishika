@@ -1,0 +1,199 @@
+// ==========================================================================
+// Clinic Info Project
+// ==========================================================================
+
+.p-clinic-info {
+  &__content {
+    display: grid;
+    gap: $spacing-2xl;
+    
+    @media (min-width: $breakpoint-lg) {
+      grid-template-columns: 1fr 1fr;
+      gap: $spacing-3xl;
+      align-items: start;
+    }
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xl;
+  }
+
+  &__subtitle {
+    font-size: $font-size-lg;
+    font-weight: 700;
+    color: $text-dark;
+    margin-bottom: $spacing-md;
+    padding-bottom: $spacing-sm;
+    border-bottom: 2px solid $primary-green;
+  }
+
+  &__address {
+    .p-clinic-info__postal {
+      font-size: $font-size-sm;
+      color: $text-light;
+      margin-bottom: $spacing-xs;
+    }
+    
+    .p-clinic-info__location {
+      font-size: $font-size-lg;
+      font-weight: 600;
+      color: $text-dark;
+      line-height: 1.4;
+    }
+  }
+
+  &__access {
+    p {
+      margin-bottom: $spacing-sm;
+      color: $text-gray;
+      line-height: 1.6;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__hours {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+  }
+
+  &__hours-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $spacing-sm 0;
+    border-bottom: 1px solid $secondary-light-green;
+    
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__day {
+    font-weight: 600;
+    color: $text-dark;
+    min-width: 80px;
+  }
+
+  &__time {
+    color: $text-gray;
+    text-align: right;
+    
+    &--closed {
+      color: $primary-orange;
+      font-weight: 600;
+    }
+  }
+
+  &__contact {
+    p {
+      margin-bottom: $spacing-sm;
+      color: $text-gray;
+      line-height: 1.6;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+      
+      strong {
+        color: $text-dark;
+        font-weight: 600;
+      }
+    }
+  }
+
+  &__map {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-lg;
+  }
+
+  &__map-container {
+    border-radius: $border-radius-lg;
+    overflow: hidden;
+    box-shadow: $shadow-light;
+    
+    iframe {
+      display: block;
+      width: 100%;
+      height: 400px;
+      
+      @media (max-width: $breakpoint-md - 1px) {
+        height: 300px;
+      }
+    }
+  }
+
+  &__map-link {
+    text-align: center;
+  }
+
+  &__map-button {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-sm;
+    padding: $spacing-md $spacing-lg;
+    background-color: $primary-green;
+    color: $white;
+    text-decoration: none;
+    border-radius: $border-radius-md;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: $shadow-light;
+    
+    &:hover {
+      background-color: darken($primary-green, 10%);
+      transform: translateY(-2px);
+      box-shadow: $shadow-medium;
+    }
+    
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
+
+// Mobile adjustments
+@media (max-width: $breakpoint-md - 1px) {
+  .p-clinic-info {
+    &__content {
+      gap: $spacing-xl;
+    }
+
+    &__details {
+      gap: $spacing-lg;
+    }
+
+    &__subtitle {
+      font-size: $font-size-base;
+    }
+
+    &__location {
+      font-size: $font-size-base;
+    }
+
+    &__hours-row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: $spacing-xs;
+    }
+
+    &__day {
+      min-width: auto;
+    }
+
+    &__time {
+      text-align: left;
+    }
+
+    &__map-button {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+} 

@@ -1,0 +1,127 @@
+// ==========================================================================
+// Footer Layout
+// ==========================================================================
+
+.l-footer {
+  background-color: $text-dark;
+  color: $white;
+  padding: $spacing-2xl 0 $spacing-lg;
+  margin-top: $spacing-3xl;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xl;
+    text-align: center;
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-xl;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-lg;
+    max-width: 400px;
+  }
+
+  &__logo {
+    font-family: $font-family-accent;
+    font-size: $font-size-xl;
+    color: $primary-orange;
+    font-weight: 700;
+  }
+
+  &__address {
+    text-align: center;
+    
+    p {
+      margin-bottom: $spacing-xs;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.6;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__nav {
+    display: grid;
+    gap: $spacing-xl;
+    
+    @media (min-width: $breakpoint-sm) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: $spacing-lg;
+    }
+  }
+
+  &__nav-section {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+  }
+
+  &__nav-title {
+    font-size: $font-size-base;
+    font-weight: 700;
+    color: $primary-orange;
+    margin-bottom: $spacing-sm;
+    padding-bottom: $spacing-xs;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  &__nav-item {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: $font-size-sm;
+    line-height: 1.6;
+
+    &:hover {
+      color: $primary-orange;
+      text-decoration: none;
+    }
+  }
+
+  &__bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: $spacing-lg;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-sm;
+  }
+
+  &__copyright {
+    font-size: $font-size-sm;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  &__note {
+    font-size: $font-size-xs;
+    color: rgba(255, 255, 255, 0.5);
+    font-style: italic;
+  }
+}
+
+// Mobile adjustments
+@media (max-width: $breakpoint-md - 1px) {
+  .l-footer {
+    padding: $spacing-xl 0 $spacing-lg;
+
+    &__main {
+      gap: $spacing-lg;
+    }
+
+    &__info {
+      gap: $spacing-md;
+    }
+  }
+}

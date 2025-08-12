@@ -1,0 +1,148 @@
+// ==========================================================================
+// Header Layout
+// ==========================================================================
+
+.l-header {
+  background-color: $white;
+  box-shadow: $shadow-light;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(
+      to right,
+      $primary-orange 0%,
+      $primary-orange 12.5%,
+      $primary-yellow 12.5%,
+      $primary-yellow 25%,
+      $primary-green 25%,
+      $primary-green 37.5%,
+      $primary-blue 37.5%,
+      $primary-blue 50%,
+      $primary-pink 50%,
+      $primary-pink 62.5%,
+      $primary-orange 62.5%,
+      $primary-orange 75%,
+      $primary-yellow 75%,
+      $primary-yellow 87.5%,
+      $primary-green 87.5%,
+      $primary-green 100%
+    );
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: $spacing-lg 0;
+  }
+
+  &__logo {
+    font-family: $font-family-accent;
+    font-size: 28px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.3s ease;
+    
+    &:hover {
+      text-decoration: none;
+      transform: scale(1.05);
+    }
+    
+    .logo-sai { color: $primary-orange; }
+    .logo-to { color: $primary-blue; }
+    .logo-shouni { color: $primary-green; }
+    .logo-shika { color: $primary-yellow; }
+  }
+}
+
+.l-nav {
+  background-color: white;
+
+  &__inner {
+    display: flex;
+    align-items: stretch;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    font-weight: 500;
+    color: $text-dark;
+    text-decoration: none;
+    position: relative;
+    border-right: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+    
+    &:first-child {
+      border-top: 4px solid $primary-green;
+      background-color: $primary-green;
+      color: white;
+    }
+    
+    &:nth-child(2) {
+      border-top: 4px solid $primary-orange;
+    }
+    
+    &:nth-child(3) {
+      border-top: 4px solid $primary-yellow;
+    }
+    
+    &:nth-child(4) {
+      border-top: 4px solid $primary-green;
+    }
+    
+    &:nth-child(5) {
+      border-top: 4px solid $primary-blue;
+    }
+    
+    &:nth-child(6) {
+      border-top: 4px solid $primary-pink;
+    }
+    
+    &:nth-child(7) {
+      border-top: 4px solid $primary-orange;
+    }
+    
+    &:nth-child(8) {
+      border-top: 4px solid $primary-blue;
+    }
+    
+    &:nth-child(9) {
+      border-top: 4px solid $primary-yellow;
+    }
+    
+    &:nth-child(10) {
+      border-top: 4px solid $primary-green;
+    }
+    
+    &:hover:not(:first-child) {
+      background-color: $secondary-light-green;
+    }
+    
+    &--has-dropdown {
+      &::after {
+        content: '▼';
+        margin-left: 8px;
+        font-size: 10px;
+        color: currentColor;
+      }
+    }
+  }
+}
+
+// Mobile styles
+@media (max-width: $breakpoint-md - 1px) {
+  .l-nav {
+    display: none;
+  }
+}
